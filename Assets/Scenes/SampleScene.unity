@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
   _audioPlayer: {fileID: 184392067}
   _songToPlay: {fileID: 8300000, guid: 77c1e85e74a778c4592d08b542f0089a, type: 3}
+  _startTime: 0
   _initialDelay: 4.6
   _songBPM: 160
 --- !u!82 &184392067

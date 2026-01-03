@@ -5,6 +5,7 @@ public class MusicPlayer : MonoBehaviour
     // Audio source & song references
     [SerializeField] private AudioSource _audioPlayer;
     [SerializeField] private AudioClip _songToPlay;
+    [SerializeField] private float _startTime;
     [SerializeField] private float _initialDelay;
     [SerializeField] private float _songBPM;
 
@@ -17,7 +18,9 @@ public class MusicPlayer : MonoBehaviour
     {
         // Set audio clip & play song
         _audioPlayer.clip = _songToPlay;
+        _audioPlayer.time = _startTime;
         _audioPlayer.Play();
+        
     }
 
     void Update()
