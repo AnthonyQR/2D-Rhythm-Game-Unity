@@ -20,7 +20,19 @@ public class MusicPlayer : MonoBehaviour
         _audioPlayer.clip = _songToPlay;
         _audioPlayer.time = _startTime;
         _audioPlayer.Play();
-        
+    }
+
+    private void OnEnable()
+    {
+        // Set audio clip & play song
+        _audioPlayer.clip = _songToPlay;
+        _audioPlayer.time = _startTime;
+        _audioPlayer.Play();
+    }
+
+    private void OnDisable()
+    {
+        _audioPlayer.Stop();
     }
 
     void Update()

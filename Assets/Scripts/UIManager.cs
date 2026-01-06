@@ -6,8 +6,19 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private TextMeshProUGUI _mistakesText;
     [SerializeField] private int _scoreAdjustmentPerNote;
+    [SerializeField] private GameObject _startGameUI;
     private int _score;
     private int _mistakes;
+
+    public void ShowStartGame()
+    {
+        _startGameUI.SetActive(true);
+    }
+
+    public void HideStartGame()
+    {
+        _startGameUI.SetActive(false);
+    }
 
     public void AddScore()
     {
