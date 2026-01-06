@@ -102,7 +102,7 @@ public class NoteJudger : MonoBehaviour
             _notesToCheck.RemoveAt(0);
 
             // Lower Score
-            _uiManager.LowerScore();
+            _uiManager.LowerScore(true);
         }
     }
 
@@ -166,7 +166,7 @@ public class NoteJudger : MonoBehaviour
             _notesToCheck.RemoveAt(0);
 
             // Add Score
-            _uiManager.AddScore();
+            _uiManager.AddScore(true);
         }
 
         // Lower score if the current beat is outside the timing window
