@@ -417,7 +417,7 @@ public class NoteJudger : MonoBehaviour
         float lowerTimingWindow = noteHoldFinalBeat - noteTimingWindowInBeats;
 
         // Allow to cancel slightly early
-        if (noteHoldFinalBeat >= lowerTimingWindow)
+        if (currentBeat >= lowerTimingWindow)
         {
             // Add maximum hold note score
             _scoreManager.AddScoreHoldNote(noteToCheck, true);
