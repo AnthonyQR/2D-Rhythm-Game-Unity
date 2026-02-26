@@ -1,17 +1,19 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Scoring")]
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private TextMeshProUGUI _notesCountText;
     [SerializeField] private TextMeshProUGUI _mistakesText;
-    [SerializeField] private int _scoreAdjustmentPerNote;
+
+    [Header("Combo")]
+    [SerializeField] private Slider _comboGaugeSlider;
+    [SerializeField] private TextMeshProUGUI _multiplierText;
+
     [SerializeField] private GameObject _startGameUI;
-    private int _score;
-    private int _notesHit;
-    private int _notesTotal;
-    private int _mistakes;
 
     public void ShowStartGame()
     {
@@ -23,36 +25,16 @@ public class UIManager : MonoBehaviour
         _startGameUI.SetActive(false);
     }
 
-    public void AddScore(bool updateNote = false)
+    public void UpdateScoreText(int score, int notesHit, int notesTotal, int mistakes)
     {
-        _score += _scoreAdjustmentPerNote;
-
-        if (updateNote)
-        {
-            _notesHit++;
-            _notesTotal++;
-        }
-
-        UpdateScoreText();
+        _scoreText.text = string.Format("Score: {0}", score);
+        _notesCountText.text = string.Format("Notes: {0} / {1}", notesHit, notesTotal);
+        _mistakesText.text = string.Format("Mistakes: {0}", mistakes);
     }
 
-    public void LowerScore(bool updateNote = false)
+    public void UpdateCombo(int comboCount, int multiplier)
     {
-        _score -= _scoreAdjustmentPerNote;
-        _mistakes++;
-
-        if (updateNote)
-        {
-            _notesTotal++;
-        }
-
-        UpdateScoreText();
-    }
-
-    private void UpdateScoreText()
-    {
-        _scoreText.text = string.Format("Score: {0}", _score);
-        _notesCountText.text = string.Format("Notes: {0} / {1}", _notesHit, _notesTotal);
-        _mistakesText.text = string.Format("Mistakes: {0}", _mistakes);
+        _comboGaugeSlider.value = comboCount;
+        _multiplierText.text = string.Format("Multiplier: X{0}", multiplier);
     }
 }

@@ -102,9 +102,27 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""FirstRowHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""4369abb8-4eaa-42b5-99cd-e8074cb8a788"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""SecondRow"",
                     ""type"": ""Button"",
                     ""id"": ""db7577d6-15e2-4ecf-98ff-b079bdd94ef0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondRowHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e80e726-f7f6-402b-a148-45e8d5b195af"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -120,9 +138,27 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""ThirdRowHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba7b6af8-fb01-4368-adac-ced0e6f06cda"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""FourthRow"",
                     ""type"": ""Button"",
                     ""id"": ""98536881-1841-4163-9158-ea737ae7982d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FourthRowHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1e712c5-76f1-4ed6-947b-ed5d861ca526"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -142,7 +178,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f59736eb-24cd-4088-973c-dfe277930a51"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -153,7 +189,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4a809e7f-b238-4217-add8-f1abe4de38b4"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -164,7 +200,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7d30691a-abbd-490f-bf5b-fe33af242fcc"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -175,7 +211,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3a1c379b-2c3c-466c-9071-c507ddb58989"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -191,6 +227,50 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca3a0beb-b61b-4d73-8023-dcd9caac0898"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirstRowHold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3cb7be3-6b37-4463-a8cd-cac37e2963f3"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondRowHold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20b6452b-eb44-4753-b95c-f04cc8afdd5a"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThirdRowHold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b94b436-0002-47c1-ad8f-39500c61d5f2"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FourthRowHold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -779,9 +859,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_FirstRow = m_Player.FindAction("FirstRow", throwIfNotFound: true);
+        m_Player_FirstRowHold = m_Player.FindAction("FirstRowHold", throwIfNotFound: true);
         m_Player_SecondRow = m_Player.FindAction("SecondRow", throwIfNotFound: true);
+        m_Player_SecondRowHold = m_Player.FindAction("SecondRowHold", throwIfNotFound: true);
         m_Player_ThirdRow = m_Player.FindAction("ThirdRow", throwIfNotFound: true);
+        m_Player_ThirdRowHold = m_Player.FindAction("ThirdRowHold", throwIfNotFound: true);
         m_Player_FourthRow = m_Player.FindAction("FourthRow", throwIfNotFound: true);
+        m_Player_FourthRowHold = m_Player.FindAction("FourthRowHold", throwIfNotFound: true);
         m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -877,9 +961,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_FirstRow;
+    private readonly InputAction m_Player_FirstRowHold;
     private readonly InputAction m_Player_SecondRow;
+    private readonly InputAction m_Player_SecondRowHold;
     private readonly InputAction m_Player_ThirdRow;
+    private readonly InputAction m_Player_ThirdRowHold;
     private readonly InputAction m_Player_FourthRow;
+    private readonly InputAction m_Player_FourthRowHold;
     private readonly InputAction m_Player_Start;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
@@ -897,17 +985,33 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @FirstRow => m_Wrapper.m_Player_FirstRow;
         /// <summary>
+        /// Provides access to the underlying input action "Player/FirstRowHold".
+        /// </summary>
+        public InputAction @FirstRowHold => m_Wrapper.m_Player_FirstRowHold;
+        /// <summary>
         /// Provides access to the underlying input action "Player/SecondRow".
         /// </summary>
         public InputAction @SecondRow => m_Wrapper.m_Player_SecondRow;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SecondRowHold".
+        /// </summary>
+        public InputAction @SecondRowHold => m_Wrapper.m_Player_SecondRowHold;
         /// <summary>
         /// Provides access to the underlying input action "Player/ThirdRow".
         /// </summary>
         public InputAction @ThirdRow => m_Wrapper.m_Player_ThirdRow;
         /// <summary>
+        /// Provides access to the underlying input action "Player/ThirdRowHold".
+        /// </summary>
+        public InputAction @ThirdRowHold => m_Wrapper.m_Player_ThirdRowHold;
+        /// <summary>
         /// Provides access to the underlying input action "Player/FourthRow".
         /// </summary>
         public InputAction @FourthRow => m_Wrapper.m_Player_FourthRow;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/FourthRowHold".
+        /// </summary>
+        public InputAction @FourthRowHold => m_Wrapper.m_Player_FourthRowHold;
         /// <summary>
         /// Provides access to the underlying input action "Player/Start".
         /// </summary>
@@ -941,15 +1045,27 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @FirstRow.started += instance.OnFirstRow;
             @FirstRow.performed += instance.OnFirstRow;
             @FirstRow.canceled += instance.OnFirstRow;
+            @FirstRowHold.started += instance.OnFirstRowHold;
+            @FirstRowHold.performed += instance.OnFirstRowHold;
+            @FirstRowHold.canceled += instance.OnFirstRowHold;
             @SecondRow.started += instance.OnSecondRow;
             @SecondRow.performed += instance.OnSecondRow;
             @SecondRow.canceled += instance.OnSecondRow;
+            @SecondRowHold.started += instance.OnSecondRowHold;
+            @SecondRowHold.performed += instance.OnSecondRowHold;
+            @SecondRowHold.canceled += instance.OnSecondRowHold;
             @ThirdRow.started += instance.OnThirdRow;
             @ThirdRow.performed += instance.OnThirdRow;
             @ThirdRow.canceled += instance.OnThirdRow;
+            @ThirdRowHold.started += instance.OnThirdRowHold;
+            @ThirdRowHold.performed += instance.OnThirdRowHold;
+            @ThirdRowHold.canceled += instance.OnThirdRowHold;
             @FourthRow.started += instance.OnFourthRow;
             @FourthRow.performed += instance.OnFourthRow;
             @FourthRow.canceled += instance.OnFourthRow;
+            @FourthRowHold.started += instance.OnFourthRowHold;
+            @FourthRowHold.performed += instance.OnFourthRowHold;
+            @FourthRowHold.canceled += instance.OnFourthRowHold;
             @Start.started += instance.OnStart;
             @Start.performed += instance.OnStart;
             @Start.canceled += instance.OnStart;
@@ -967,15 +1083,27 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @FirstRow.started -= instance.OnFirstRow;
             @FirstRow.performed -= instance.OnFirstRow;
             @FirstRow.canceled -= instance.OnFirstRow;
+            @FirstRowHold.started -= instance.OnFirstRowHold;
+            @FirstRowHold.performed -= instance.OnFirstRowHold;
+            @FirstRowHold.canceled -= instance.OnFirstRowHold;
             @SecondRow.started -= instance.OnSecondRow;
             @SecondRow.performed -= instance.OnSecondRow;
             @SecondRow.canceled -= instance.OnSecondRow;
+            @SecondRowHold.started -= instance.OnSecondRowHold;
+            @SecondRowHold.performed -= instance.OnSecondRowHold;
+            @SecondRowHold.canceled -= instance.OnSecondRowHold;
             @ThirdRow.started -= instance.OnThirdRow;
             @ThirdRow.performed -= instance.OnThirdRow;
             @ThirdRow.canceled -= instance.OnThirdRow;
+            @ThirdRowHold.started -= instance.OnThirdRowHold;
+            @ThirdRowHold.performed -= instance.OnThirdRowHold;
+            @ThirdRowHold.canceled -= instance.OnThirdRowHold;
             @FourthRow.started -= instance.OnFourthRow;
             @FourthRow.performed -= instance.OnFourthRow;
             @FourthRow.canceled -= instance.OnFourthRow;
+            @FourthRowHold.started -= instance.OnFourthRowHold;
+            @FourthRowHold.performed -= instance.OnFourthRowHold;
+            @FourthRowHold.canceled -= instance.OnFourthRowHold;
             @Start.started -= instance.OnStart;
             @Start.performed -= instance.OnStart;
             @Start.canceled -= instance.OnStart;
@@ -1287,12 +1415,26 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnFirstRow(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "FirstRowHold" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFirstRowHold(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "SecondRow" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSecondRow(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SecondRowHold" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSecondRowHold(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "ThirdRow" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1301,12 +1443,26 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnThirdRow(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "ThirdRowHold" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnThirdRowHold(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "FourthRow" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnFourthRow(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "FourthRowHold" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFourthRowHold(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Start" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

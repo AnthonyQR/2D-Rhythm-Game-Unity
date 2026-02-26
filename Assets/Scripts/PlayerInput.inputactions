@@ -16,9 +16,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "FirstRowHold",
+                    "type": "Button",
+                    "id": "4369abb8-4eaa-42b5-99cd-e8074cb8a788",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "SecondRow",
                     "type": "Button",
                     "id": "db7577d6-15e2-4ecf-98ff-b079bdd94ef0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondRowHold",
+                    "type": "Button",
+                    "id": "1e80e726-f7f6-402b-a148-45e8d5b195af",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -34,9 +52,27 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ThirdRowHold",
+                    "type": "Button",
+                    "id": "ba7b6af8-fb01-4368-adac-ced0e6f06cda",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "FourthRow",
                     "type": "Button",
                     "id": "98536881-1841-4163-9158-ea737ae7982d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FourthRowHold",
+                    "type": "Button",
+                    "id": "f1e712c5-76f1-4ed6-947b-ed5d861ca526",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -56,7 +92,7 @@
                 {
                     "name": "",
                     "id": "f59736eb-24cd-4088-973c-dfe277930a51",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -67,7 +103,7 @@
                 {
                     "name": "",
                     "id": "4a809e7f-b238-4217-add8-f1abe4de38b4",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -78,7 +114,7 @@
                 {
                     "name": "",
                     "id": "7d30691a-abbd-490f-bf5b-fe33af242fcc",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -89,7 +125,7 @@
                 {
                     "name": "",
                     "id": "3a1c379b-2c3c-466c-9071-c507ddb58989",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -105,6 +141,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca3a0beb-b61b-4d73-8023-dcd9caac0898",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirstRowHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3cb7be3-6b37-4463-a8cd-cac37e2963f3",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondRowHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "20b6452b-eb44-4753-b95c-f04cc8afdd5a",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ThirdRowHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b94b436-0002-47c1-ad8f-39500c61d5f2",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FourthRowHold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -17,6 +17,9 @@ public struct Note
     public float holdDuration;
     public GameObject noteObject;
 
+    public HoldNoteObject holdNoteScript;
+    public int pointsScored;
+
     public Note(NoteRow newNoteRow, float newBeat, bool newIsHold, float newHoldDuration, 
         GameObject newNoteObject)
     {
@@ -25,5 +28,8 @@ public struct Note
         isHold = newIsHold;
         holdDuration = newHoldDuration;
         noteObject = newNoteObject;
+
+        holdNoteScript = null;
+        pointsScored = 0;
     }
 }

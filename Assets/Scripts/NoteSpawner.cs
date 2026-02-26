@@ -29,6 +29,12 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private GameObject _thirdRowNotePrefab;
     [SerializeField] private GameObject _fourthRowNotePrefab;
 
+    [Header("Hold Note Prefabs")]
+    [SerializeField] private GameObject _firstRowHoldNotePrefab;
+    [SerializeField] private GameObject _secondRowHoldNotePrefab;
+    [SerializeField] private GameObject _thirdRowHoldNotePrefab;
+    [SerializeField] private GameObject _fourthRowHoldNotePrefab;
+
     // List of notes to spawn as the track plays
     private List<Note> _notes;
 
@@ -139,7 +145,7 @@ public class NoteSpawner : MonoBehaviour
         while (_notes[0].beat - _noteSpawnBeatOffset <= _musicPlayer.GetTimeInBeats())
         {
             // Spawn the note & remove it
-            SpawnNote(_notes[0]);
+            SetupNoteSpawn(_notes[0]);
             _notes.RemoveAt(0);
 
             // Return if there are no more notes so an error doesn't occur
@@ -150,11 +156,8 @@ public class NoteSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnNote(Note note)
+    private void SetupNoteSpawn(Note note)
     {
-        // Null object to reference later
-        GameObject newNote = null;
-
         // Calculate beat to spawn the note at
         float noteBeatOffset = _musicPlayer.GetInitialDelayInBeats();
         float beatToSpawn = note.beat + noteBeatOffset;
@@ -170,6 +173,20 @@ public class NoteSpawner : MonoBehaviour
 
         // Create Vector3 to move note after instantiating
         Vector3 totalNotePosition = new Vector3(newNotePosition, 0f, 0f);
+
+        if (!note.isHold)
+        {
+            SpawnNote(note, totalNotePosition);
+        }
+        else
+        {
+            SpawnHoldNote(note, totalNotePosition);
+        }
+    }
+    private void SpawnNote(Note note, Vector3 notePosition)
+    {
+        // Null object to reference later
+        GameObject newNote = null;
 
         // Spawn correct note in the correct row based on Enum
         switch(note.noteRow)
@@ -189,7 +206,39 @@ public class NoteSpawner : MonoBehaviour
         }
 
         // Move note to the correct position
-        newNote.transform.localPosition = totalNotePosition;
+        newNote.transform.localPosition = notePosition;
+
+        // Hand note over to Note Judger
+        note.noteObject = newNote;
+        _noteJudger.GetNewNote(note);
+    }
+
+    private void SpawnHoldNote(Note note, Vector3 notePosition)
+    {
+        // Null object to reference later
+        GameObject newNote = null;
+
+        // Spawn correct note in the correct row based on Enum
+        switch (note.noteRow)
+        {
+            case Note.NoteRow.First:
+                newNote = Instantiate(_firstRowHoldNotePrefab, _firstRow.position, _firstRowHoldNotePrefab.transform.rotation, _firstRow);
+                break;
+            case Note.NoteRow.Second:
+                newNote = Instantiate(_secondRowHoldNotePrefab, _secondRow.position, _secondRowHoldNotePrefab.transform.rotation, _secondRow);
+                break;
+            case Note.NoteRow.Third:
+                newNote = Instantiate(_thirdRowHoldNotePrefab, _thirdRow.position, _thirdRowHoldNotePrefab.transform.rotation, _thirdRow);
+                break;
+            case Note.NoteRow.Fourth:
+                newNote = Instantiate(_fourthRowHoldNotePrefab, _fourthRow.position, _fourthRowHoldNotePrefab.transform.rotation, _fourthRow);
+                break;
+        }
+
+        // Move note to the correct position
+        newNote.transform.localPosition = notePosition;
+
+        note = newNote.GetComponent<HoldNoteObject>().SetupHoldNote(note, _noteScroller, _musicPlayer);
 
         // Hand note over to Note Judger
         note.noteObject = newNote;
